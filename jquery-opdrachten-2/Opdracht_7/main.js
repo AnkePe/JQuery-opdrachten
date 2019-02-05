@@ -38,9 +38,17 @@ $(document).ready(function(){   //begint te werken als de DOM opgebouwd is
     
     /* On hover: Display the URL of links in a tooltip when hovering over links */
     $("a").hover(function(){
-        $(this).add
+        let titleText = $(this).attr('href')
+        $(this).attr('title', titleText)    //tooltip maak je met het titel attr
     })
     
     /* On click: add "Chapter 1:" before the 1st title h2 and "Chapter 2:" before the 2nd title h2 */
-    
+    $("ol li").last().click(function(){
+        $("h2").eq(0).prepend("Chapter 1: ")    // voegt iets in vooraan in het el
+        $("h2").eq(1).prepend("Chapter 2: ")  
+        
+        // je kan het ervoor zetten met before
+     })  
+
+
 });
